@@ -1,0 +1,4 @@
+name: yukk
+recipe: laravel
+config:
+  webroot: public
