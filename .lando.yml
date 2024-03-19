@@ -2,3 +2,11 @@ name: yukk
 recipe: laravel
 config:
   webroot: public
+services:
+  node:
+    type: node:20
+    ports:
+      - 5173:5173
+tooling:
+  npm:
+    service: node
