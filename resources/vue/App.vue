@@ -1,8 +1,7 @@
 <template>
-  <h1 class="bg-red-500">Hello, Vuejs with Laravel</h1>
+  <h1 class="bg-red-500">Hello, Vuejs with Laravel<Button>Test</Button></h1>
 </template>
-<script>
-export default {
-  setup() {},
-};
+
+<script lang="ts" setup>
+import { Button } from "ant-design-vue";
 </script>
