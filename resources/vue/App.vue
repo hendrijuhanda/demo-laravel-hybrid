@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Main from "@/components/layouts/Main.vue";
+import Sign from "@/components/layouts/Sign.vue";
 import { ConfigProvider, StyleProvider } from "ant-design-vue";
 import { RouterView } from "vue-router";
 </script>
@@ -11,8 +12,10 @@ import { RouterView } from "vue-router";
     },
 }">
     <StyleProvider hashPriority="high">
-        <template v-if="$route.meta.layout === 'login'">
-            <RouterView />
+        <template v-if="$route.meta.layout === 'sign'">
+            <Sign>
+                <RouterView />
+            </Sign>
         </template>
 
         <template v-else-if="$route.meta.layout === 'main'">

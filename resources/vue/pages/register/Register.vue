@@ -4,9 +4,13 @@ import { Button, Input, InputPassword } from "ant-design-vue";
 
 <template>
 <div>
-    <h2 class="tw-font-semibold tw-text-lg tw-mb-8 tw-text-center">Login</h2>
+    <h2 class="tw-font-semibold tw-text-lg tw-mb-8">Register</h2>
 
     <form>
+        <div class="tw-mb-4">
+            <Input placeholder="Fullname" />
+        </div>
+
         <div class="tw-mb-4">
             <Input placeholder="Email" />
         </div>
@@ -15,13 +19,17 @@ import { Button, Input, InputPassword } from "ant-design-vue";
             <InputPassword placeholder="Password" />
         </div>
 
+        <div class="tw-mb-4">
+            <InputPassword placeholder="Confirm Password" />
+        </div>
+
         <div>
-            <Button type="primary">Login</Button>
+            <Button type="primary">Register</Button>
         </div>
     </form>
 
     <div class="tw-mt-8">
-        Dont have an account? <RouterLink to="/register">Register</RouterLink>
+        Have an account? <RouterLink to="/login">Login</RouterLink>
     </div>
 </div>
 </template>
