@@ -15,20 +15,16 @@
     "jsx": "preserve",
 
     /* Linting */
-    // "strict": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
 
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./resources/vue/*"]
     }
   },
-  "include": [
-    "env.d.ts",
-    "resources/vue/**/*.ts",
-    "resources/vue/**/*.tsx",
-    "resources/vue/**/*.vue"
-  ],
+  "include": ["env.d.ts", "resources/vue/**/*", "resources/js/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
