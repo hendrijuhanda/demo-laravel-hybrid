@@ -1,8 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HistoryPage from "./pages/HistoryPage.vue";
-import IndexPage from "./pages/IndexPage.vue";
-import LoginPage from "./pages/LoginPage.vue";
-import TransactionPage from "./pages/TransactionPage.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -10,22 +6,26 @@ const router = createRouter({
     {
       path: "/",
       name: "index",
-      component: IndexPage,
+      component: () => import("./pages/index/index.vue"),
+      meta: { layout: "main" },
     },
     {
       path: "/transaction",
       name: "transaction",
-      component: TransactionPage,
+      component: import("./pages/transaction/index.vue"),
+      meta: { layout: "main" },
     },
     {
       path: "/history",
       name: "history",
-      component: HistoryPage,
+      component: () => import("./pages/history/index.vue"),
+      meta: { layout: "main" },
     },
     {
       path: "/login",
       name: "login",
-      component: LoginPage,
+      component: () => import("./pages/login/index.vue"),
+      meta: { layout: "login" },
     },
   ],
 });
