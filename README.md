@@ -1,4 +1,4 @@
-## NestJS
+## Laravel
 
 This app is built with Laravel. Look at the [Laravel documentation](https://laravel.com/docs/11.x) to learn more.
 
