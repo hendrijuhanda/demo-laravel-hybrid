@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import Main from "@/components/layouts/Main.vue";
 import Sign from "@/components/layouts/Sign.vue";
-import { ConfigProvider, StyleProvider } from "ant-design-vue";
+import { ConfigProvider, StyleProvider, notification } from "ant-design-vue";
+import { onMounted } from "vue";
 import { RouterView } from "vue-router";
+
+onMounted(async () => {
+    notification.config({
+        placement: 'bottomRight',
+    });
+})
 </script>
 
 <template>

@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { useAuth } from "./stores/auth";
+import { useInitial } from "./stores/initial";
+import { sessionRequest } from "./utils/api-client";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -36,8 +39,33 @@ const router = createRouter({
   ],
 });
 
-router.beforeEach((to, _from, next) => {
-  const isAuthenticated = false;
+router.beforeEach(async (to, _from, next) => {
+  const { initToken, setToken, setIsAuthenticated, setUser } = useAuth();
+  const { isInitialized, setIsInitialized } = useInitial();
+
+  if (!isInitialized) {
+    initToken();
+
+    const res = await sessionRequest().catch((e) => {
+      if (e?.response?.status === 401) {
+        setToken(null);
+      }
+    });
+
+    if (res) {
+      const { data } = res;
+
+      setIsAuthenticated(true);
+      setUser({
+        name: data?.data?.name,
+        email: data?.data?.email,
+      });
+    }
+
+    setIsInitialized(true);
+  }
+
+  const { isAuthenticated } = useAuth();
 
   if (to.name === "register") {
     return next();
