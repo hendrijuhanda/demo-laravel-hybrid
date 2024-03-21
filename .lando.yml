@@ -2,11 +2,20 @@ name: yukk
 recipe: laravel
 config:
   webroot: public
+
 services:
+  appserver:
+    run:
+      - composer install
+      - cp .env.example .env
+      - php artisan migrate
   node:
     type: node:20
     ports:
       - 5173:5173
+    run:
+      - npm install
+      - npm run build
   pma:
     type: phpmyadmin
   swagger:
