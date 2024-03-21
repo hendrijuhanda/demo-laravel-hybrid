@@ -9,9 +9,24 @@ services:
       - 5173:5173
   pma:
     type: phpmyadmin
+  swagger:
+    type: lando
+    moreHttpPorts:
+      - 8080
+    services:
+      image: swaggerapi/swagger-ui
+      command: /docker-entrypoint.sh nginx -g "daemon off;"
+      ports:
+        - 8080
+      volumes:
+        - ./yukk-test.openapi.json:/usr/share/nginx/html/openapi.json
+      environment:
+        SWAGGER_JSON_URL: /openapi.json
 tooling:
   npm:
     service: node
 proxy:
   pma:
     - pma.yukk.lndo.site
+  swagger:
+    - swagger.yuk.lndo.site:8080
