@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: "/transaction",
       name: "transaction",
-      component: import("./pages/transaction/index.vue"),
+      component: () => import("./pages/transaction/index.vue"),
       meta: { layout: "main" },
     },
     {

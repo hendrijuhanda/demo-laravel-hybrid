@@ -15,5 +15,5 @@ interface TransactionRepositoryInterface
     /**
      *
      */
-    public function getLatestRecord(): TransactionInterface | null;
+    public function getUserLatestRecord(): TransactionInterface | null;
 }

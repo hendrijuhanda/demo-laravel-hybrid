@@ -21,7 +21,7 @@ abstract class TransactionServiceAbstract
      */
     protected function getLastBalance(TransactionRepositoryInterface $transactionRepository): float
     {
-        $latest = $transactionRepository->getLatestRecord();
+        $latest = $transactionRepository->getUserLatestRecord();
 
         return $latest ? $latest->balance : 0;
     }

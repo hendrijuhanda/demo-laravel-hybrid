@@ -18,6 +18,9 @@ instance.interceptors.request.use(function (config) {
   return config;
 });
 
+/**
+ *
+ */
 interface LoginPayload {
   email: string;
   password: string;
@@ -27,6 +30,9 @@ export const loginRequest: (data: LoginPayload) => Promise<AxiosResponse> = (
   data
 ) => instance.post("/login", data);
 
+/**
+ *
+ */
 interface RegisterPayload {
   name: string;
   email: string;
@@ -34,12 +40,37 @@ interface RegisterPayload {
   password_confirmation: string;
 }
 
+/**
+ *
+ */
 export const registerRequest: (
   data: RegisterPayload
 ) => Promise<AxiosResponse> = (data) => instance.post("/register", data);
 
+/**
+ *
+ */
 export const sessionRequest: () => Promise<AxiosResponse> = () =>
   instance.get("/session");
 
+/**
+ *
+ */
 export const logoutRequest: () => Promise<AxiosResponse> = () =>
   instance.post("/logout");
+
+/**
+ *
+ */
+export const createTransactionRequest: (data: any) => Promise<AxiosResponse> = (
+  data
+) =>
+  instance.post("/transaction", data, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+
+/**
+ *
+ */
+export const getBalanceRequest: () => Promise<AxiosResponse> = () =>
+  instance.get("/balance");

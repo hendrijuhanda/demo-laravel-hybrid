@@ -11,4 +11,9 @@ interface TransactionServiceInterface
      *
      */
     public function create(array $input): TransactionInterface;
+
+    /**
+     *
+     */
+    public function getUserCurrentBalance(): float;
 }

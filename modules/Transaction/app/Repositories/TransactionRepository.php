@@ -2,6 +2,7 @@
 
 namespace Modules\Transaction\Repositories;
 
+use Illuminate\Support\Facades\Auth;
 use Modules\Transaction\Models\Contracts\TransactionInterface;
 use Modules\Transaction\Models\Transaction;
 use Modules\Transaction\Repositories\Contracts\TransactionRepositoryInterface;
@@ -20,8 +21,8 @@ class TransactionRepository implements TransactionRepositoryInterface
     /**
      *
      */
-    public function getLatestRecord(): TransactionInterface | null
+    public function getUserLatestRecord(): TransactionInterface | null
     {
-        return Transaction::orderBy('id', 'desc')->first();
+        return Transaction::where('user_id', Auth::id())->orderBy('id', 'desc')->first();
     }
 }

@@ -22,15 +22,25 @@ class TransactionService extends TransactionServiceAbstract implements Transacti
     public function create(array $input): TransactionInterface
     {
         $trxId = $this->generateTransactionId();
+        $balance = $this->getLastBalance($this->transactionRepository);
 
         $input['user_id'] = Auth::id();
         $input['transaction_id'] = $trxId;
-        $input['balance'] = $this->getLastBalance($this->transactionRepository) + $input['amount'];
+        $input['balance'] = $balance - $input['amount'];
 
         if ($input['type'] === 'topup') {
+            $input['balance'] = $balance + $input['amount'];
             $input['topup_receipt'] = $this->saveTopupReceipt($trxId);
         }
 
         return $this->transactionRepository->create($input);
+    }
+
+    /**
+     *
+     */
+    public function getUserCurrentBalance(): float
+    {
+        return $this->getLastBalance($this->transactionRepository);
     }
 }
