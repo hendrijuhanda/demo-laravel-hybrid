@@ -2,10 +2,16 @@
 
 namespace Modules\Transaction\Services\Contracts;
 
+use Illuminate\Pagination\LengthAwarePaginator;
 use Modules\Transaction\Models\Contracts\TransactionInterface;
 
 interface TransactionServiceInterface
 {
+
+    /**
+     *
+     */
+    public function index(): LengthAwarePaginator;
 
     /**
      *

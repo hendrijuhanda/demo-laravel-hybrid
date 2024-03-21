@@ -2,6 +2,7 @@
 
 namespace Modules\Transaction\Services;
 
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
 use Modules\Transaction\Models\Contracts\TransactionInterface;
 use Modules\Transaction\Repositories\Contracts\TransactionRepositoryInterface;
@@ -14,6 +15,14 @@ class TransactionService extends TransactionServiceAbstract implements Transacti
     public function __construct(TransactionRepositoryInterface $transactionRepository)
     {
         $this->transactionRepository = $transactionRepository;
+    }
+
+    /**
+     *
+     */
+    public function index(): LengthAwarePaginator
+    {
+        return $this->transactionRepository->listWithPagination();
     }
 
     /**

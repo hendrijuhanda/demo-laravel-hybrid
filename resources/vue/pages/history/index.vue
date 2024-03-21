@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { ArrowLeftOutlined } from "@ant-design/icons-vue";
 import { Card } from "ant-design-vue";
-import { ref } from "vue";
-import Table from './Table.vue'
+import Table from './Table.vue';
 </script>
 
 <template>

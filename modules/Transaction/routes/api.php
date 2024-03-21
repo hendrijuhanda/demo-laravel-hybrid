@@ -16,6 +16,7 @@ use Modules\Transaction\Http\Controllers\TransactionController;
 */
 
 Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
+    Route::get('/transactions', [TransactionController::class, 'index'])->name('transaction.index');
     Route::post('/transaction', [TransactionController::class, 'create'])->name('transaction.create');
 
     Route::get('/balance', [BalanceController::class, 'balance'])->name('balance');

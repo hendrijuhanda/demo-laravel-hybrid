@@ -62,6 +62,22 @@ export const logoutRequest: () => Promise<AxiosResponse> = () =>
 /**
  *
  */
+interface TransactionsParam {
+  page?: number;
+  per_page?: number;
+  type?: "topup" | "transaction";
+  description?: string;
+  transaction_id?: string;
+}
+
+export const getTransactionsRequest: (
+  params: TransactionsParam
+) => Promise<AxiosResponse> = (params) =>
+  instance.get("/transactions", { params });
+
+/**
+ *
+ */
 export const createTransactionRequest: (data: any) => Promise<AxiosResponse> = (
   data
 ) =>
