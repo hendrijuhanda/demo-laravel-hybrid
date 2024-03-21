@@ -35,29 +35,31 @@ const handleLogout = () => {
                 <Logo class="tw-h-6" />
             </div>
 
-            <Dropdown :trigger="['click']" placement="topLeft">
-                <div class="tw-flex tw-items-center tw-cursor-pointer">
-                    <div class="tw-mr-4">Hi, {{ user.name }}</div>
+            <div class="tw-flex tw-items-center ">
+                <div class="tw-mr-4">Hi, {{ user.name }}</div>
 
-                    <Avatar>
+                <Dropdown :trigger="['click']" placement="bottomRight">
+                    <Avatar class="tw-cursor-pointer">
                         <template #icon>
                             <UserOutlined />
                         </template>
                     </Avatar>
-                </div>
-                <template #overlay>
-                    <Menu>
-                        <MenuItem @click="handleLogout">
-                        <div class="tw-flex tw-items-center tw-justify-between">
-                            <div>Logout</div>
-                            <div>
-                                <LogoutOutlined />
+
+                    <template #overlay>
+                        <Menu style="width: 100px;">
+                            <MenuItem @click="handleLogout">
+                            <div class="tw-flex tw-items-center tw-justify-between">
+                                <div>Logout</div>
+                                <div>
+                                    <LogoutOutlined />
+                                </div>
                             </div>
-                        </div>
-                        </MenuItem>
-                    </Menu>
-                </template>
-            </Dropdown>
+                            </MenuItem>
+                        </Menu>
+                    </template>
+                </Dropdown>
+            </div>
+
         </header>
 
         <main class="tw-flex-grow">

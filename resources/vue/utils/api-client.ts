@@ -27,6 +27,17 @@ export const loginRequest: (data: LoginPayload) => Promise<AxiosResponse> = (
   data
 ) => instance.post("/login", data);
 
+interface RegisterPayload {
+  name: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
+}
+
+export const registerRequest: (
+  data: RegisterPayload
+) => Promise<AxiosResponse> = (data) => instance.post("/register", data);
+
 export const sessionRequest: () => Promise<AxiosResponse> = () =>
   instance.get("/session");
 
