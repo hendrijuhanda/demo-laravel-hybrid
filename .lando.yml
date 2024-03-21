@@ -38,4 +38,4 @@ proxy:
   pma:
     - pma.yukk.lndo.site
   swagger:
-    - swagger.yuk.lndo.site:8080
+    - swagger.yukk.lndo.site:8080
