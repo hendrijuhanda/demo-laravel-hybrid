@@ -35,3 +35,21 @@ php artisan serve --port=8000
 ```
 
 The app should be running on `http://localhost:8000`.
+
+## Usage with Lando (Recommended)
+
+[Lando](https://lando.dev/) is local development environment DevOps tool, built on Docker. The repository includes `.lando.yml` config file and is already pre-scripted.
+
+Assumed Lando is installed, simply run command below.
+
+```
+lando start
+```
+
+Wait for the build process, and if everything goes well, the apps should be virtually hosted on: 
+- App - `http://yukk.lndo.site`
+- Api - `http://yukk.lndo.site/api/v1`
+- PhpMyAdmin - `http://pma.yukk.lndo.site`
+- Swagger - `http://swagger.yukk.lndo.site`
+
+That's it.
