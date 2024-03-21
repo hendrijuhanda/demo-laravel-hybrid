@@ -39,7 +39,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
                 $format = [
                     'status' => false,
-                    'service' => $request->route()->getName(),
+                    'service' => $request->route()?->getName(),
                     'message' => $e->getMessage(),
                     'data' => $data
                 ];

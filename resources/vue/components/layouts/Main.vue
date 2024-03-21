@@ -46,7 +46,7 @@ const handleLogout = () => {
                     </Avatar>
 
                     <template #overlay>
-                        <Menu style="width: 100px;">
+                        <Menu style="width: 150px;">
                             <MenuItem @click="handleLogout">
                             <div class="tw-flex tw-items-center tw-justify-between">
                                 <div>Logout</div>
