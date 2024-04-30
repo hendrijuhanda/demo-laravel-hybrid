@@ -132,12 +132,12 @@ onMounted(() => {
 
 <template>
 <div>
-    <div class="tw-flex tw-items-center tw-justify-end tw-mb-8">
-        <div class="tw-mr-4">
+    <div class="tw-flex tw-flex-col md:tw-flex-row md:tw-items-center tw-justify-end tw-mb-8">
+        <div class="tw-mr-4 tw-mb-4 md:tw-mb-0">
             <InputSearch v-model:value="searchTrxId" placeholder="Search transaction ID" @search="handleSearch" />
         </div>
 
-        <div class="tw-mr-4">
+        <div class="tw-mr-4 tw-mb-4 md:tw-mb-0">
             <InputSearch v-model:value="searchDescription" placeholder="Search description" @search="handleSearch" />
         </div>
 
@@ -147,7 +147,7 @@ onMounted(() => {
     </div>
 
     <Table :data-source="dataSource" :columns="columns" :loading="isFetching" :pagination="paginationSource"
-        @change="handleTableChange">
+        :scroll="{ x: true }" @change="handleTableChange">
         <template #bodyCell="{ column, record }">
             <template v-if="column.dataIndex === 'datetime'">
                 <div>{{ DateTime.fromISO(record.datetime).toFormat('d LLLL yyyy HH:mm') }}</div>

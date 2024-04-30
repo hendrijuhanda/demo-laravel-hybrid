@@ -85,7 +85,7 @@ const onFinish = async (values: any) => {
         <Textarea v-model:value="formState.description" placeholder="Input description, eg: Pembelian helikopter" />
     </FormItem>
 
-    <FormItem :wrapper-col="{ offset: 3 }">
+    <FormItem :wrapper-col="{ md: { offset: 3 } }">
         <Button type="primary" html-type="submit" :loading="isSubmitting">Submit</Button>
     </FormItem>
 </Form>

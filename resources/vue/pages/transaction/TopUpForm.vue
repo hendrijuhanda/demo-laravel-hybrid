@@ -123,7 +123,7 @@ const onFinish = async (values: any) => {
         </Upload>
     </FormItem>
 
-    <FormItem :wrapper-col="{ offset: 3 }">
+    <FormItem :wrapper-col="{ md: { offset: 3 } }">
         <Button type="primary" html-type="submit" :loading="isSubmitting">Submit</Button>
     </FormItem>
 </Form>
