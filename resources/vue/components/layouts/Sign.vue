@@ -7,7 +7,7 @@ import Logo from "./Logo.vue";
 
 <template>
 <LayoutContainer>
-    <div class="tw-min-h-screen tw-w-full tw-flex tw-flex-col tw-items-center tw-justify-center tw-px-16">
+    <div class="tw-min-h-screen tw-w-full tw-flex tw-flex-col tw-items-center tw-justify-center md:tw-px-16">
         <div class="tw-max-w-full tw-w-[300px] tw-mt-24">
             <div class="tw-flex tw-justify-center tw-mb-16">
                 <Logo />
