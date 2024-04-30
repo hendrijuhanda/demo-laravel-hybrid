@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Laravel
 
 This app is built with Laravel. Look at the [Laravel documentation](https://laravel.com/docs/11.x) to learn more.
@@ -54,7 +53,3 @@ Wait for the build process, and if everything goes well, the apps should be virt
 - Swagger - `http://swagger.yukk.lndo.site`
 
 That's it.
-=======
-# demo-laravel-hybrid
-Hybrid Rest APi + SPA in one Laravel app.
->>>>>>> 72ddf9bbf6ba6f495eb51a44d8be691a1a08905a
